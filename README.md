@@ -1,6 +1,6 @@
 # InterviewBit Solutions
 
-![](assets/images/Isolated.png?raw=true)
+![](assets/images/ib.png?raw=true)
 
 These are my solutions for InterviewBit solutions in C++. 
 New solutions as well as solutions in different languages will be updated soon. 
@@ -43,5 +43,10 @@ See https://www.interviewbit.com
 License
 ----
 MIT
+
+Copyright
+----
+All questions used here are property of Interviewbit
+
 
 Peace✌️ 
