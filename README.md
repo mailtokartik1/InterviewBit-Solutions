@@ -18,6 +18,10 @@ New solutions as well as solutions in different languages will be updated soon.
   - Bit Manipulation
   - 2 Pointers
   - Linked Lists
+  - Stacks and Queues
+  - Hashing
+  - Backtracking
+  - Trees
   - *MORE COMING SOON*
 
 # Things to do 📝
@@ -39,6 +43,8 @@ See https://www.interviewbit.com
 
  - Add missing chapters
  - Add Javascript Solutions
+ - Add JAVA solutions
+ - Add Python solutions
 
 License
 ----
