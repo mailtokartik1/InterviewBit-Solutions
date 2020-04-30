@@ -10,10 +10,16 @@ int all(bool digits[], int B, int total) {
 }
 int compare(bool digits[], int B, int C, int total) {
     string c = to_string(C);
+
+    // To count the numbers less than a given digit
+
     vector<int> count(10);
     for (int i = 1; i < 10; i ++) {
         count[i] = digits[i - 1] + count[i - 1];
     }
+
+    // To store the numbers until any certain digit i
+
     int dp[B + 1];
     dp[0] = 0;
     bool flag = 1;

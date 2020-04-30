@@ -26,7 +26,7 @@ int Solution::maxSpecialProduct(vector<int> &A) {
         st.pop();
     }
 
-    // // Make prev greater array
+    // Make prev greater array
 
     for (int i = 0; i < A.size(); i ++) {
         if (st.empty()) {
