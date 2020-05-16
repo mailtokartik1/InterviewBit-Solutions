@@ -1,3 +1,52 @@
+// Helper function to add tabs to text
+
+string makeTab(string a, int curTab) {
+    string res;
+    while (curTab) {
+        res += '\t';
+        curTab --;
+    }
+    res += a;
+    return res;
+}
+
+// Driver
+
+vector<string> Solution::prettyJSON(string A) {
+    vector<string> res;
+    int curTab = 0;
+    string temp;
+    for (int i = 0; i < A.size(); i ++) {
+        if (A[i] == '{' || A[i] == '[') {
+            if (temp.size()) {
+                res.push_back(makeTab(temp, curTab));
+            }
+            temp.clear();
+            res.push_back(makeTab(string(1, A[i]), curTab));
+            curTab ++;
+        } else if (A[i] == ',') {
+            if (temp.size()) {
+                res.push_back(makeTab(temp, curTab) + ",");
+            } else res[res.size() - 1] += ',';
+            temp.clear();
+        } else if (A[i] == '}' || A[i] == ']') {
+            if (temp.size()) {
+                res.push_back(makeTab(temp, curTab));
+            }
+            curTab --;
+            res.push_back(makeTab(string(1, A[i]), curTab));
+            temp.clear();
+        } else if (A[i] == ' ') {
+            continue;
+        } else {
+            temp.push_back(A[i]);  
+        }
+    }
+    return res;
+}
+
+// Alternate solution
+
 vector<string> Solution::prettyJSON(string A) {
 
     // Corner case
