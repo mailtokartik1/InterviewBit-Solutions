@@ -1,3 +1,73 @@
+// Helper function to add spaces
+
+void addSpaces(string &a, int num) {
+    for (int i = 0; i < num; i ++) {
+        a += ' ';
+    }
+    return;
+}
+vector<string> Solution::fullJustify(vector<string> &A, int B) {
+    vector<string> res;
+    if (A.size() <= 0) {
+        return res; 
+    }
+    int curSpace = 0;
+    int blankspaces = 0;
+    int start = 0;
+    int realPlaces = 0;
+    for (int i = 0; i < A.size(); i ++) {
+
+        // Check capacity
+
+        if (curSpace + A[i].size() < B) {
+            curSpace += A[i].size() + 1;
+            realPlaces += A[i].size();
+        } else {
+            if (curSpace + A[i].size() == B) {
+                curSpace += A[i].size();
+                realPlaces += A[i].size();
+            } else i --;
+
+            // Fill data into string
+
+            int blankPortions = i - start;
+            blankspaces = B - realPlaces;
+            string temp;
+            for (int j = start; j <= i; j ++) {
+                temp += A[j];
+                int dist = ceil(blankspaces / (double)(blankPortions));
+                blankspaces -= dist;
+                blankPortions --;
+                addSpaces(temp, dist);
+            }
+            addSpaces(temp, B - temp.size());
+            res.push_back(temp);
+            start = i + 1;
+            realPlaces = 0;
+            curSpace = 0;
+            blankspaces = 0;
+        }
+    }
+
+    // Last line of the string vector
+
+    string temp;
+    for (int j = start; j <= A.size() - 1; j ++) {
+        temp += A[j];
+        if (j != A.size() - 1) {
+            addSpaces(temp, 1);    
+        } else {
+            addSpaces(temp, B - temp.size());
+        }
+    }
+    if (temp.size()) {
+        res.push_back(temp);    
+    }
+    return res;
+}
+
+// Alternate solution
+
 vector<string> Solution::fullJustify(vector<string> &A, int B) {
 
     // Corner case
