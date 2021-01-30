@@ -2,8 +2,8 @@
 
 ![](assets/images/ib.png?raw=true)
 
-These are my solutions for InterviewBit solutions in C++. 
-New solutions as well as solutions in different languages will be updated soon. 
+These are my solutions for InterviewBit solutions in C++ and Python. 
+New solutions are still a work in progress.
 
   - Conceptual
   - Comments enabled
@@ -44,7 +44,6 @@ See https://www.interviewbit.com
  - Add missing chapters
  - Add Javascript Solutions
  - Add JAVA solutions
- - Add Python solutions
 
 License
 ----
